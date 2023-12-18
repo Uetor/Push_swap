@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:06:58 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/08 05:34:13 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/18 20:55:41 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./Libft/libft.h"
+# include "./libft/libft.h"
 # include <stdio.h>
+
+# define MIN	-2147483648
+# define MAX	2147483647
 
 typedef struct s_data
 {
@@ -59,8 +62,9 @@ int		is_number(char *str);
 void	join_argv(t_data *data);
 int		repeat_number(t_data *data);
 int		ft_atoli(const char *str);
-int		min_max(t_data *data);
 //Función para pruebas
 void	print_stack(t_data *data);
+//Ordenar números
+void	order_numbers(t_data *data);
 
 #endif

@@ -1,11 +1,11 @@
 NAME 		= push_swap
 SRC 		= main.c reserve_memory.c check.c movements.c movements_2.c \
-				movements_3.c
+				movements_3.c order_number.c
 
 CC 			= gcc
 CFLAGS 		= -Wall -Werror -Wextra
 RM 			= rm -f
-LIBFT_PATH 	= ./Libft
+LIBFT_PATH 	= ./libft
 OBJS		= $(SRC:.c=.o)
 
 .c.o:

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reserve_memory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:21:26 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/08 05:29:16 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/18 20:33:26 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,17 @@ void	reserve_memory(t_data *data)
 	data->i = 0;
 	while (data->i < data->leng_a)
 	{
-		data->stack_a[data->i] = ft_atoli(data->numbers[data->i]);
-		//printf("%d ", data->stack_a[data->i]);
+		if (ft_atoli(data->numbers[data->i]) >= MIN  //Aquí se comprueba que el número está dentro del rango de los enteros.
+			&& ft_atoli(data->numbers[data->i]) <= MAX)
+		{
+			data->stack_a[data->i] = ft_atoli(data->numbers[data->i]);
+			printf("%d ", data->stack_a[data->i]);
+		}
+		else
+		{
+			printf("El número no es un entero");
+			return ;
+		}
 		data->i++;
 	}
 	//printf("\n");

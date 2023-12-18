@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:57:24 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/08 05:33:40 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/18 20:24:50 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,31 +69,17 @@ int	ft_atoli(const char *str)
 			|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{	
+	{
 		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{	
+	{
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
 	return (num * sign);
-}
-
-int	min_max(t_data *data)
-{
-	long	i;
-
-	i = 0;
-	while (data->stack_a[i])
-	{
-		if (data->stack_a[i] < -2147483648 || data->stack_a[i] > 2147483647)
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:55:17 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/08 05:35:04 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/18 21:08:17 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	reserve_memory(&data);
-	printf("Mayor o menor %d\n", min_max(&data));
-	//print_stack(&data);
+	order_numbers(&data);
+	print_stack(&data);
 	return (0);
 }
