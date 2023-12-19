@@ -6,7 +6,7 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:21:26 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/18 20:33:26 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:24:19 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	reserve_memory(t_data *data)
 			&& ft_atoli(data->numbers[data->i]) <= MAX)
 		{
 			data->stack_a[data->i] = ft_atoli(data->numbers[data->i]);
-			printf("%d ", data->stack_a[data->i]);
+			//printf("%d ", data->stack_a[data->i]);
 		}
 		else
 		{

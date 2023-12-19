@@ -6,7 +6,7 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:55:17 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/18 21:08:17 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:25:09 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	while (data.numbers[i])
 	{
 		j = is_number(data.numbers[i]);
-		printf("is number es %d\n", j);
+		//printf("is number es %d\n", j);
 		i++;
 	}
 	reserve_memory(&data);
