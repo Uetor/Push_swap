@@ -6,7 +6,7 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:06:58 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/18 20:55:41 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:41:42 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ typedef struct s_data
 
 }	t_data;
 
+void	join_argv(t_data *data);
 void	reserve_memory(t_data *data);
+void	ft_free_memory(char **str);
 //movimientos
 void	swap_a(t_data *data, int print);
 void	swap_b(t_data *data, int print);
@@ -59,12 +61,12 @@ void	up(t_data *data, int inverse);
 void	down(t_data *data, int inverse);
 //Check
 int		is_number(char *str);
-void	join_argv(t_data *data);
 int		repeat_number(t_data *data);
 int		ft_atoli(const char *str);
 //Función para pruebas
 void	print_stack(t_data *data);
 //Ordenar números
 void	order_numbers(t_data *data);
+void	ft_index(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 20:36:01 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/19 20:28:54 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:59:01 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,33 @@ void	order_numbers(t_data *data)
 		reverse_rotate_a(data, 0);
 	}
 }
+//Creo un indice donde enumero las posiciones de los números de 0 hasta el máximo de números.
+void	ft_index(t_data *data)
+{
+	int	*aux;
+	int	i;
+	int	j;
 
+	aux = malloc(sizeof(int *) * data->leng_a);
+	i = 0;
+	while (i < data->leng_a)
+	{
+		j = 0;
+		while (j < data->leng_a)
+		{
+			if (data->stack_a[i] > data->stack_a[j])
+				aux[i]++;
+			j++;
+		}
+		i++;
+	}
+	i = 0;
+	while (i < data->leng_a)
+	{
+		data->stack_a[i] = aux[i];
+		printf("%d ", data->stack_a[i]); //Para comprobar.
+		i++;
+	}
+	printf("\n");//Para comprobar.
+	free(aux);
+}

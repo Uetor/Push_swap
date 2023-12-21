@@ -6,7 +6,7 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:57:24 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/18 20:24:50 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:53:22 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	is_number(char *str) //Va antes de la reserva de memoria.
 
 int	repeat_number(t_data *data) //Va después de la reserva de memoria.
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (data->stack_a[i])
@@ -81,5 +81,3 @@ int	ft_atoli(const char *str)
 	}
 	return (num * sign);
 }
-
-

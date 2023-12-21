@@ -6,11 +6,39 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:21:26 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/19 20:24:19 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:46:09 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//Coge todo lo que haya en argv y lo convierte en un solo string.
+void	join_argv(t_data *data)
+{
+	char	*aux;
+	int		i;
+
+	i = 1;
+	if (data->argc > 1)
+	{
+		data->string = ft_strdup(data->argv[i]);
+		while (i < data->argc - 1)
+		{
+			aux = ft_strjoin(data->string, " ");
+			free(data->string);
+			data->string = ft_strdup(aux);
+			free(aux);
+			aux = ft_strjoin(data->string, data->argv[i + 1]);
+			free(data->string);
+			data->string = ft_strdup(aux);
+			free(aux);
+			i++;
+		}
+		data->numbers = ft_split(data->string, ' ');
+	}
+	free(data->string);
+	printf("%s\n", data->string); // Pruebas
+}
 
 void	reserve_memory(t_data *data)
 {
@@ -31,7 +59,7 @@ void	reserve_memory(t_data *data)
 		}
 		else
 		{
-			printf("El número no es un entero");
+			ft_printf("The number it is not a integer\n");
 			return ;
 		}
 		data->i++;
@@ -39,29 +67,15 @@ void	reserve_memory(t_data *data)
 	//printf("\n");
 }
 
-//Coge todo lo que haya en argv y lo convierte en un solo string.
-void	join_argv(t_data *data)
+void	ft_free_memory(char **str)
 {
-	char 	*aux;
-	int		i;
+	int	i;
 
-	i = 1;
-	if (data->argc > 1)
+	i = 0;
+	while (str[i])
 	{
-		data->string = ft_strdup(data->argv[i]);
-		while(i < data->argc - 1)
-		{
-			aux = ft_strjoin(data->string, " ");
-			free(data->string);
-			data->string = ft_strdup(aux);
-			free(aux);
-			aux = ft_strjoin(data->string, data->argv[i + 1]);
-			free(data->string);
-			data->string = ft_strdup(aux);
-			free(aux);
-			i++;
-		}
-		data->numbers = ft_split(data->string, ' ');
+		free(str[i]);
+		i++;
 	}
-	printf("%s\n", data->string);
+	free(str);
 }

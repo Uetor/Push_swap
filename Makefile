@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/21 19:25:00 by pedrogon          #+#    #+#              #
+#    Updated: 2023/12/21 19:25:03 by pedrogon         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME 		= push_swap
 SRC 		= main.c reserve_memory.c check.c movements.c movements_2.c \
 				movements_3.c order_number.c
