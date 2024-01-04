@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reserve_memory.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:21:26 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/21 20:46:09 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/22 02:43:50 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	join_argv(t_data *data)
 		}
 		data->numbers = ft_split(data->string, ' ');
 	}
+	//printf("%s\n", data->string); // Pruebas
 	free(data->string);
-	printf("%s\n", data->string); // Pruebas
 }
 
 void	reserve_memory(t_data *data)
@@ -51,7 +51,7 @@ void	reserve_memory(t_data *data)
 	data->i = 0;
 	while (data->i < data->leng_a)
 	{
-		if (ft_atoli(data->numbers[data->i]) >= MIN  //Aquí se comprueba que el número está dentro del rango de los enteros.
+		if (ft_atoli(data->numbers[data->i]) > MIN  //Aquí se comprueba que el número está dentro del rango de los enteros.
 			&& ft_atoli(data->numbers[data->i]) <= MAX)
 		{
 			data->stack_a[data->i] = ft_atoli(data->numbers[data->i]);

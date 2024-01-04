@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:06:58 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/12/21 20:41:42 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/12/22 04:18:47 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_data
 	char	*string;
 	char	**numbers;
 
+	//El número del indice más grande
+	int	big_number;
 }	t_data;
 
 void	join_argv(t_data *data);
@@ -68,5 +70,6 @@ void	print_stack(t_data *data);
 //Ordenar números
 void	order_numbers(t_data *data);
 void	ft_index(t_data *data);
+void 	move_big_numbers(t_data *data);
 
 #endif
