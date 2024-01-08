@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements_3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:31:25 by pedrogon          #+#    #+#             */
-/*   Updated: 2024/01/04 05:47:59 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/19 19:34:48 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	up(t_data *data, int inverse)
 	{
 		while (data->i > 0)
 		{
-			data->stack_a[data->j].index = data->stack_a[data->j + 1].index;
+			data->stack_a[data->j] = data->stack_a[data->j + 1];
 			data->i--;
 			data->j++;
 		}
@@ -31,7 +31,7 @@ void	up(t_data *data, int inverse)
 		data->i = data->leng_b - 1;
 		while (data->i > 0)
 		{
-			data->stack_b[data->j].index = data->stack_b[data->j + 1].index;
+			data->stack_b[data->j] = data->stack_b[data->j + 1];
 			data->i--;
 			data->j++;
 		}
@@ -48,7 +48,7 @@ void	down(t_data *data, int inverse)
 	{
 		while (j > 0)
 		{
-			data->stack_b[j].index = data->stack_b[j - 1].index;
+			data->stack_b[j] = data->stack_b[j - 1];
 			j--;
 		}
 	}
@@ -57,7 +57,7 @@ void	down(t_data *data, int inverse)
 		j = data->leng_a;
 		while (j > 0)
 		{
-			data->stack_a[j].index = data->stack_a[j - 1].index;
+			data->stack_a[j] = data->stack_a[j - 1];
 			j--;
 		}
 	}
@@ -67,14 +67,14 @@ void	reverse_rotate_a(t_data *data, int print)
 {
 	int	swap;
 
-	swap = data->stack_a[data->leng_a - 1].index;
+	swap = data->stack_a[data->leng_a - 1];
 	data->i = data->leng_a;
 	while (data->i >= 1)
 	{
-		data->stack_a[data->i].index = data->stack_a[data->i - 1].index;
+		data->stack_a[data->i] = data->stack_a[data->i - 1];
 		data->i--;
 	}
-	data->stack_a[0].index = swap;
+	data->stack_a[0] = swap;
 	if (print == 0)
 		write(1, "rra\n", 4);
 }
@@ -83,14 +83,14 @@ void	reverser_rotate_b(t_data *data, int print)
 {
 	int	swap;
 
-	swap = data->stack_b[data->leng_b - 1].index;
+	swap = data->stack_b[data->leng_b - 1];
 	data->i = data->leng_b;
 	while (data->i >= 1)
 	{
-		data->stack_b[data->i].index = data->stack_b[data->i - 1].index;
+		data->stack_b[data->i] = data->stack_b[data->i - 1];
 		data->i--;
 	}
-	data->stack_b[0].index = swap;
+	data->stack_b[0] = swap;
 	if (print == 0)
 		write(1, "rrb\n", 4);
 }

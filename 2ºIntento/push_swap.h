@@ -6,7 +6,7 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:06:58 by pedrogon          #+#    #+#             */
-/*   Updated: 2024/01/04 06:11:32 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/22 04:18:47 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,28 @@
 # define MIN	-2147483648
 # define MAX	2147483647
 
-typedef struct s_stack
-{
-	int	index;
-	int	partner;
-}	t_stack;
-
 typedef struct s_data
 {
     //Los stacks con sus respectivas longitudes
-	t_stack		*stack_a;
-	int			leng_a;
-	t_stack		*stack_b;
-	int			leng_b;
+	int		*stack_a;
+	int		leng_a;
+	int		*stack_b;
+	int		leng_b;
 
     //Contadores
-	int			i;
-	int			j;
+	int		i;
+	int		j;
 
     //argc argv
-	int			argc;
-	char		**argv;
+	int		argc;
+	char	**argv;
 
 	//Puntero donde lo convierto todo a un string y donde luego lo guardo todo con un split
-	char		*string;
-	char		**numbers;
+	char	*string;
+	char	**numbers;
 
 	//El número del indice más grande
-	int			big_number;
+	int	big_number;
 }	t_data;
 
 void	join_argv(t_data *data);
@@ -77,6 +71,5 @@ void	print_stack(t_data *data);
 void	order_numbers(t_data *data);
 void	ft_index(t_data *data);
 void 	move_big_numbers(t_data *data);
-void	partner_number(t_data *data);
 
 #endif

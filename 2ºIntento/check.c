@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:57:24 by pedrogon          #+#    #+#             */
-/*   Updated: 2024/01/04 05:42:24 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/21 19:53:22 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	repeat_number(t_data *data) //Va después de la reserva de memoria.
 	int	j;
 
 	i = 0;
-	while (data->stack_a[i].index)
+	while (data->stack_a[i])
 	{
 		j = i + 1;
-		while (data->stack_a[j].index)
+		while (data->stack_a[j])
 		{
-			if (data->stack_a[i].index == data->stack_a[j].index)
+			if (data->stack_a[i] == data->stack_a[j])
 				return (0);
 			j++;
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:14:46 by pedrogon          #+#    #+#             */
-/*   Updated: 2024/01/04 05:48:49 by pedro            ###   ########.fr       */
+/*   Updated: 2023/12/19 19:16:55 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	rotate_a(t_data *data, int print)
 {
 	int	swap;
 
-	swap = data->stack_a[0].index;
+	swap = data->stack_a[0];
 	data->i = data->leng_a;
 	while (data->i >= 2)
 	{
 		up(data, 0);
 		data->i--;
 	}
-	data->stack_a[data->leng_a - 1].index = swap;
+	data->stack_a[data->leng_a - 1] = swap;
 	if (print == 0)
 		write(1, "ra\n", 3);
 }
@@ -32,14 +32,14 @@ void	rotate_b(t_data *data, int print)
 {
 	int	swap;
 
-	swap = data->stack_b[0].index;
+	swap = data->stack_b[0];
 	data->i = data->leng_b;
 	while (data->i >= 2)
 	{
 		up(data, 1);
 		data->i--;
 	}
-	data->stack_b[data->leng_b - 1].index = swap;
+	data->stack_b[data->leng_b - 1] = swap;
 	if (print == 0)
 		write(1, "rb\n", 3);
 }

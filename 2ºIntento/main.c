@@ -6,7 +6,7 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 18:55:17 by pedrogon          #+#    #+#             */
-/*   Updated: 2024/01/04 05:40:25 by pedro            ###   ########.fr       */
+/*   Updated: 2024/01/04 03:19:48 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	print_stack(t_data *data)
 	printf("stack_a\n");
 	while (i < data->leng_a)
 	{
-		printf("%d\n", data->stack_a[i].index);
+		printf("%d\n", data->stack_a[i]);
 		i++;
 	}
 	i = 0;
 	printf("stack_b\n");
 	while (i < data->leng_b)
 	{
-		printf("%d\n", data->stack_b[i].index);
+		printf("%d\n", data->stack_b[i]);
 		i++;
 	}
 }
